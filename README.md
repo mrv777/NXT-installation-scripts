@@ -22,7 +22,7 @@ If you only have a root user or are unsure, start here
 Remove the {username} with your username and the same for password
 
 Logout and log back in as new user. 
-Now that we have a regular user we can do the 2 commands to get and set everthing up:
+Now that we have a regular user we can do the 2 commands to get and set everything up:
 - ```wget https://raw.githubusercontent.com/mrv777/NXT-installation-scripts/master/install-nxt.sh```
 - ```bash ./install-nxt.sh```
 
