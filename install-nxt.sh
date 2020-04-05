@@ -712,24 +712,24 @@ fi
 
 
 echo "" && echo "[INFO] creating update script ..."
-echo "${UPDATE_NXT_NODES_SCRIPT_CONTENT}" > /home/${LOCAL_USER}/update-nodes.sh
-sudo chmod 700 /home/${LOCAL_USER}/update-nodes.sh
+echo "${UPDATE_NXT_NODES_SCRIPT_CONTENT}" > /home/${LOCAL_USER}/update-NXT-nodes.sh
+sudo chmod 700 /home/${LOCAL_USER}/update-NXT-nodes.sh
 
 [ "${AUTO_UPDATES:-}" ] || read -r -p "Would you like to enable automatic updates? (Default yes): " AUTO_UPDATES
 AUTO_UPDATES=${AUTO_UPDATES:-yes}
 if [ "$AUTO_UPDATES" == "yes" ]; then
-  (sudo crontab -l 2>> /dev/null; echo "0 2 * * *  /bin/bash /home/${LOCAL_USER}/update-nodes.sh >/dev/null 2>&1") | sudo crontab -
+  (sudo crontab -l 2>> /dev/null; echo "0 2 * * *  /bin/bash /home/${LOCAL_USER}/update-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
 fi
 
 echo "" && echo "[INFO] creating optimize script ..."
-echo "${OPTIMIZE_NXT_NODES_SCRIPT_CONTENT}" > /home/${LOCAL_USER}/optimize-nodes.sh
-sudo chmod 700 /home/${LOCAL_USER}/optimize-nodes.sh
+echo "${OPTIMIZE_NXT_NODES_SCRIPT_CONTENT}" > /home/${LOCAL_USER}/optimize-NXT-nodes.sh
+sudo chmod 700 /home/${LOCAL_USER}/optimize-NXT-nodes.sh
 
 [ "${OPTIMIZE_NODES:-}" ] || read -r -p "Would you like to enable monthly optimization of node(s)? (Default yes): " OPTIMIZE_NODES
 OPTIMIZE_NODES=${OPTIMIZE_NODES:-yes}
 if [ "$OPTIMIZE_NODES" == "yes" ]; then
   RANDOM_DAY=$((1 + RANDOM % 28))
-  (sudo crontab -l 2>> /dev/null; echo "0 0 $RANDOM_DAY * *  /bin/bash /home/${LOCAL_USER}/optimize-nodes.sh >/dev/null 2>&1") | sudo crontab -
+  (sudo crontab -l 2>> /dev/null; echo "0 0 $RANDOM_DAY * *  /bin/bash /home/${LOCAL_USER}/optimize-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
 fi
 
 echo "" && echo "[INFO] cleaning up ..."
@@ -739,7 +739,7 @@ rm -rf nxt install-nxt.sh *.zip *.zip.asc *.txt
 
 echo ""
 date +"%Y-%m-%d %H:%M:%S || [INFO] Server ready to go."
-echo "[INFO] To update your node(s) manually you can run './update-nodes.sh',"
+echo "[INFO] To update your node(s) manually you can run './update-NXT-nodes.sh',"
 echo "[INFO] To run the contract runner, uncomment the parameter in <nxt folder>/conf/nxt.properties"
 echo "[INFO] and configure them properly."
 echo "[INFO] Press any key to continue and reboot the system"
