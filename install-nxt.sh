@@ -718,7 +718,7 @@ sudo chmod 700 /home/${LOCAL_USER}/update-NXT-nodes.sh
 [ "${AUTO_UPDATES:-}" ] || read -r -p "Would you like to enable automatic updates? (Default yes): " AUTO_UPDATES
 AUTO_UPDATES=${AUTO_UPDATES:-yes}
 if [ "$AUTO_UPDATES" == "yes" ]; then
-  (sudo crontab -l 2>> /dev/null; echo "0 2 * * *  /bin/bash /home/${LOCAL_USER}/update-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
+  (sudo crontab -l 2>> /dev/null; echo "0 3 * * *  /bin/bash /home/${LOCAL_USER}/update-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
 fi
 
 echo "" && echo "[INFO] creating optimize script ..."
@@ -729,7 +729,7 @@ sudo chmod 700 /home/${LOCAL_USER}/optimize-NXT-nodes.sh
 OPTIMIZE_NODES=${OPTIMIZE_NODES:-yes}
 if [ "$OPTIMIZE_NODES" == "yes" ]; then
   RANDOM_DAY=$((1 + RANDOM % 28))
-  (sudo crontab -l 2>> /dev/null; echo "0 0 $RANDOM_DAY * *  /bin/bash /home/${LOCAL_USER}/optimize-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
+  (sudo crontab -l 2>> /dev/null; echo "0 1 $RANDOM_DAY * *  /bin/bash /home/${LOCAL_USER}/optimize-NXT-nodes.sh >/dev/null 2>&1") | sudo crontab -
 fi
 
 echo "" && echo "[INFO] cleaning up ..."
