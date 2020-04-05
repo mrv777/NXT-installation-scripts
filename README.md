@@ -17,15 +17,14 @@ Repository for [NXT](https://www.jelurida.com/nxt) node installation scripts for
 ## Getting Started
 
 If you only have a root user or are unsure, start here
-```wget https://raw.githubusercontent.com/mrv777/NXT-installation-scripts/master/create-sudo-user.sh```
-
-```bash ./create-sudo-user.sh -u {username} -p {password}```
+- ```wget https://raw.githubusercontent.com/mrv777/NXT-installation-scripts/master/create-sudo-user.sh```
+- ```bash ./create-sudo-user.sh -u {username} -p {password}```
 Remove the {username} with your username and the same for password
 
 Logout and log back in as new user
 Now that we have a regular user we can do the 2 commands to get and set everthing up:
-```wget https://raw.githubusercontent.com/mrv777/NXT-installation-scripts/master/install-nxt.sh```
-```bash ./install-nxt.sh```
+- ```wget https://raw.githubusercontent.com/mrv777/NXT-installation-scripts/master/install-nxt.sh```
+- ```bash ./install-nxt.sh```
 
 ## Files
 ### install-nxt.sh
